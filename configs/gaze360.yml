@@ -1,0 +1,13 @@
+train_params:
+  data_path: "./datasets/Gaze360/"
+  lr: 0.001
+  total_epochs: 2
+  batch_size: 32
+  save_every: 20
+  pretrained:
+
+loss_params:
+  map: "./Masker/360-masker.jpg"
+  w1: 1
+  w2: 1
+  
