@@ -29,11 +29,11 @@ class Model(nn.Module):
         return gaze, img
 
 class Gelossop():
-    def __init__(self, attentionmap, w1=1, w2=1, require_img=True):
-        self.gloss = torch.nn.L1Loss().cuda()
+    def __init__(self, attentionmap, w1=1, w2=1, require_img=True, gpu_id=0):
+        self.gloss = torch.nn.L1Loss().to(gpu_id)
         #self.gloss = torch.nn.MSELoss().cuda()
-        self.recloss = torch.nn.MSELoss().cuda()
-        self.attentionmap = attentionmap.cuda()
+        self.recloss = torch.nn.MSELoss().to(gpu_id)
+        self.attentionmap = attentionmap.to(gpu_id)
         self.require_img = require_img
         if self.require_img:
             self.w1 = w1

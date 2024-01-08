@@ -1,8 +1,8 @@
 train_params:
   data_path: "./datasets/Gaze360/"
   lr: 0.001
-  total_epochs: 2
-  batch_size: 32
+  total_epochs: 100
+  batch_size: 200
   save_every: 20
   pretrained:
 
